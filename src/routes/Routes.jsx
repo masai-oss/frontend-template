@@ -15,7 +15,7 @@ const Routes = (props) => {
       <Route path="/" component={NavBarPublic} />
       <Switch>
         <Route path="/" exact render={() => <Home />} />
-        <Route path="/dash" render={() => <DashboardRoutes {...props} />} />
+        <Route path="/dash" render={() => <DashboardRoutes />} />
         <Route path="/login" render={() => <Login />} />
         <Route path="/register" render={() => <Register />} />
         <Route path="/about" render={() => <About />} />
