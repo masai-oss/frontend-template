@@ -9,7 +9,7 @@ import Home from "./Home";
 import NavBarPublic from "./NavbarPublic";
 import NoMatch from "./NoMatch";
 
-const Routes = (props) => {
+const Routes = () => {
   return (
     <>
       <Route path="/" component={NavBarPublic} />

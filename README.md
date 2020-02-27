@@ -183,4 +183,4 @@ Refer the detailed [documentation](docs/authentication.md)
 
 6. Always handle error in promises with `catch` method.
 
-7. [Naming Conventions](https://github.com/KarthikeyanRanasthala/react-project-template/blob/master/docs/naming.md)
+7. [Naming Conventions](https://github.com/masai-oss/frontend-template/blob/master/docs/naming.md)
