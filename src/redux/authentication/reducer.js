@@ -1,14 +1,14 @@
-import { LOGIN_USER, LOGOUT_USER } from "./actionTypes";
+import { LOGIN_USER_REQUEST, LOGOUT_USER_R, LOGOUT_USER_REQUEST } from "./actionTypes";
 
 const initState = {
-  isAuth: false
+  isAuth: true
 };
 
 const reducer = (state = initState, action) => {
   switch (action.type) {
-    case LOGIN_USER:
+    case LOGIN_USER_REQUEST:
       return { isAuth: true };
-    case LOGOUT_USER:
+    case LOGOUT_USER_REQUEST:
       return { isAuth: false };
 
     default:
