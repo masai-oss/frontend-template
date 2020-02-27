@@ -25,8 +25,12 @@ axiosInstance.interceptors.response.use(
       console.log("Response Summary: ", response.data.summary);
       console.log("Response Content: ", response.data.data);
     }
+    return response
   },
-  error => console.log(error)
+  error => {
+    console.log(error)
+    return error
+  }
 );
 
 export default axiosInstance;
