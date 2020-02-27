@@ -25,11 +25,11 @@ axiosInstance.interceptors.response.use(
       console.log("Response Summary: ", response.data.summary);
       console.log("Response Content: ", response.data.data);
     }
-  return response
+    return response;
   },
   error => {
-    console.log('Error',error)
-    return error
+    console.log("Error", error);
+    return error;
   }
 );
 
