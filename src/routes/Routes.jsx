@@ -9,13 +9,13 @@ import Home from "./Home";
 import NavBarPublic from "./NavbarPublic";
 import NoMatch from "./NoMatch";
 
-const Routes = () => {
+const Routes = (props) => {
   return (
     <>
       <Route path="/" component={NavBarPublic} />
       <Switch>
         <Route path="/" exact render={() => <Home />} />
-        <Route path="/dash" render={() => <DashboardRoutes />} />
+        <Route path="/dash" render={() => <DashboardRoutes {...props} />} />
         <Route path="/login" render={() => <Login />} />
         <Route path="/register" render={() => <Register />} />
         <Route path="/about" render={() => <About />} />
