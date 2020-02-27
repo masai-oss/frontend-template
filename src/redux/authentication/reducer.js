@@ -1,7 +1,8 @@
-import { LOGIN_USER_REQUEST,
+import {
+  LOGIN_USER_REQUEST,
   LOGIN_USER_SUCCESS,
   LOGIN_USER_FAILURE,
-  LOGOUT_USER_REQUEST,     
+  LOGOUT_USER_REQUEST,
   LOGOUT_USER_SUCCESS,
   LOGOUT_USER_FAILURE
 } from "./actionTypes";
@@ -15,31 +16,31 @@ const initState = {
 const reducer = (state = initState, action) => {
   switch (action.type) {
     case LOGIN_USER_REQUEST:
-      return { 
+      return {
         isLoading: true,
-        error: false 
+        error: false
       };
     case LOGIN_USER_SUCCESS:
-      return { 
+      return {
         isLoading: false,
         isAuth: true
       };
-    case LOGIN_USER_REQUEST:
-      return { 
+    case LOGIN_USER_FAILURE:
+      return {
         isLoading: false,
         error: true
       };
     case LOGOUT_USER_REQUEST:
-      return { 
+      return {
         isLoading: false,
         error: false
       };
     case LOGOUT_USER_SUCCESS:
-      return { 
+      return {
         isAuth: false
       };
     case LOGOUT_USER_FAILURE:
-      return { 
+      return {
         isLoading: false,
         error: true
       };

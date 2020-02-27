@@ -1,24 +1,26 @@
-import { LOGIN_USER_REQUEST,
+import {
+  LOGIN_USER_REQUEST,
   LOGIN_USER_SUCCESS,
   LOGIN_USER_FAILURE,
-  LOGOUT_USER_REQUEST,     
+  LOGOUT_USER_REQUEST,
   LOGOUT_USER_SUCCESS,
   LOGOUT_USER_FAILURE
 } from "./actionTypes";
-import axios from "../../utils/axiosInterceptor"
+import axios from "../../utils/axiosInterceptor";
 
 export const loginUserRequest = () => ({
-  type: LOGIN_USER
+  type: LOGIN_USER_REQUEST
 });
 
-export const loginUserSuccess = () => ({
-  type: LOGIN_USER
+export const loginUserSuccess = payload => ({
+  type: LOGIN_USER_SUCCESS,
+  payload
 });
 
-export const loginUserFailure = () => ({
-  type: LOGIN_USER
+export const loginUserFailure = payload => ({
+  type: LOGIN_USER_FAILURE,
+  error: payload
 });
-
 
 export const loginUser = payload => {
   return dispatch => {
@@ -31,20 +33,23 @@ export const loginUser = payload => {
       .then(res => {
         dispatch(loginUserSuccess(res.data));
       })
-      .catch(() => dispatch(loginUserFail()));
+      .catch(() => dispatch(loginUserFailure()));
   };
 };
 
-export const logoutUserRequest = () => ({
-  type: LOGOUT_USER
+export const logoutUserRequest = payload => ({
+  type: LOGOUT_USER_REQUEST,
+  payload
 });
 
-export const logoutUserSuccess = () => ({
-  type: LOGOUT_USER
+export const logoutUserSuccess = payload => ({
+  type: LOGOUT_USER_SUCCESS,
+  payload
 });
 
-export const logoutUserFailure = () => ({
-  type: LOGOUT_USER
+export const logoutUserFailure = payload => ({
+  type: LOGOUT_USER_FAILURE,
+  error: payload
 });
 
 export const logoutUser = payload => {
@@ -63,6 +68,6 @@ export const logoutUser = payload => {
       .then(res => {
         dispatch(logoutUserSuccess(res));
       })
-      .catch((err) => dispatch(logoutUserFail(err.message)));
+      .catch(err => dispatch(logoutUserFailure(err.message)));
   };
 };
